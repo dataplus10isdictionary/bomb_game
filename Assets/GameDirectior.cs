@@ -14,7 +14,6 @@ public class GameDirectior : MonoBehaviour
     void Start()
     {
        this.timer = GameObject.Find("Timer");
-
     }
 
     // Update is called once per frame
@@ -22,7 +21,7 @@ public class GameDirectior : MonoBehaviour
     {
        time += Time.deltaTime;
        this.timer.GetComponent<Text>().text = time.ToString("F2");
-    //    time2.text = Time.deltaTime.ToString("F2");
+    //    time2.text = time.ToString("F2");
 
     }
 }

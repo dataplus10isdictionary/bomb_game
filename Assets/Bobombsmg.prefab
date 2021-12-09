@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 3658980585056210272}
   - component: {fileID: 3658980585056210273}
   - component: {fileID: 3658980585056210274}
+  - component: {fileID: 2498397102380930515}
+  - component: {fileID: 7505190084344174030}
   m_Layer: 0
   m_Name: Bobombsmg
   m_TagString: Untagged
@@ -95,3 +97,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37597a2ca99fe214fa9c6e67b92fc486, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  LIMIT_TIME: 100
+  MOVE_SPEED: 0.02
+  MOVE_UPPER_LIMMIT: 4
+  MOVE_LOWER_LIMMIT: -4
+--- !u!114 &2498397102380930515
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3658980585056210275}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates: []
+--- !u!58 &7505190084344174030
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3658980585056210275}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 1.325

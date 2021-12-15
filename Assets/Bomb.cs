@@ -9,6 +9,8 @@ public class Bomb : MonoBehaviour {
     public float MOVE_SPEED = 0.05f;
     public float MOVE_UPPER_LIMMIT = 4.0f;
     public float MOVE_LOWER_LIMMIT = -4.0f;
+    protected bool countFlag;
+    GameDirectior gameDirectior;
 
 
     protected void Start()
@@ -17,6 +19,8 @@ public class Bomb : MonoBehaviour {
         SignBit = 1;
         Touching = false;
         LIMIT_TIME = 5.0f;
+        gameDirectior = GameObject.Find("Game Directior").GetComponent<GameDirectior>();
+        countFlag = false;
     }
 
 
@@ -30,8 +34,14 @@ public class Bomb : MonoBehaviour {
             }
             else if(IsDead()){
                 Destroy(gameObject);
-                GameObject.Find("Game Directior").GetComponent<GameDirectior>().GameFlag = false;
+                gameDirectior.GameFlag = false;
             }    
+        }
+
+        if (IsInCircle() && !countFlag)
+        {
+            gameDirectior.CountScore();
+            countFlag = true;
         }
     }
 

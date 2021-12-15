@@ -35,4 +35,9 @@ public class GameDirectior : MonoBehaviour
         TextGameOver.text = "GameOver";
         btn.SetActive(true);
     }
+
+    public void CountScore()
+    {
+        Score++;
+    }
 }

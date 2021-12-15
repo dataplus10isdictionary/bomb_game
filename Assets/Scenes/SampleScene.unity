@@ -199,9 +199,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameFlag: 0
-  TextGameOver: {fileID: 1935398646}
-  TextScore: {fileID: 943298107}
-  btn: {fileID: 2013375648}
+  TextGameOver: {fileID: 0}
+  TextScore: {fileID: 0}
+  btn: {fileID: 0}
 --- !u!4 &140845987
 Transform:
   m_ObjectHideFlags: 0
@@ -528,7 +528,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 
+  m_Text: Score  0
 --- !u!222 &943298108
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -815,7 +815,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bomb_pre: {fileID: 3658980585056210275, guid: 56efb8546583b714b8700254bfbf5635, type: 3}
   INTERVAL_TIME: 6
-  X: 1
+  X: 0
 --- !u!4 &1218295529
 Transform:
   m_ObjectHideFlags: 0

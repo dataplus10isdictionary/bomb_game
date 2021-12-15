@@ -9,8 +9,6 @@ public class Bomb : MonoBehaviour {
     public float MOVE_SPEED = 0.05f;
     public float MOVE_UPPER_LIMMIT = 4.0f;
     public float MOVE_LOWER_LIMMIT = -4.0f;
-    //デバッグで出力がうざいので。
-    bool firstDebug = true;
 
 
     protected void Start()
@@ -19,28 +17,26 @@ public class Bomb : MonoBehaviour {
         SignBit = 1;
         Touching = false;
         LIMIT_TIME = 5.0f;
-        //Destroy(gameObject, LIMIT_TIME);
     }
 
 
     protected void Update()
     {
         LIMIT_TIME -= Time.deltaTime;
-        if (!Touching && !IsInCircle())
-        {
-            Walk();
-            if (IsDead())
+        if (!IsInCircle()){
+            if (!Touching && !IsDead())
             {
-                Destroy(gameObject);
-                GameObject.Find("Game Directior").GetComponent<GameDirectior>().GameOver();
-                Debug.Log("死んだ");
+                Walk();
             }
+            else if(IsDead()){
+                Destroy(gameObject);
+                GameObject.Find("Game Directior").GetComponent<GameDirectior>().GameFlag = false;
+            }    
         }
     }
 
 
     void Walk(){
-        //わざわざ変数にする必要はないかも？
         float bombY = transform.position.y;
         if (bombY >= MOVE_UPPER_LIMMIT) {
             SignBit = -1;
@@ -58,6 +54,7 @@ public class Bomb : MonoBehaviour {
 
         return false;  
     }
+
 
     protected virtual bool IsInCircle(){
         float bombX = transform.position.x;

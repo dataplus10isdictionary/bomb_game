@@ -7,25 +7,32 @@ public class GameDirectior : MonoBehaviour
 {
     GameObject timer;
     float time;
-    //public Text time2;
+    public bool GameFlag;
+    public Text TextGameOver;
+    public Text TextScore;
+    public GameObject btn;
+    int Score;
 
-
-    // Start is called before the first frame update
     void Start()
     {
-       this.timer = GameObject.Find("Timer");
+        this.timer = GameObject.Find("Timer");
+        GameFlag = true;
+        btn.SetActive(false);
+        Score = 0;
+        Time.timeScale = 1f;
     }
 
-    // Update is called once per frame
+
     void Update()
     {
-       time += Time.deltaTime;
-       this.timer.GetComponent<Text>().text = time.ToString("F2");
-    //    time2.text = time.ToString("F2");
+        time += Time.deltaTime;
+        this.timer.GetComponent<Text>().text = time.ToString("F2");
+        TextScore.text = "Score:" + Score.ToString();
     }
 
     public void GameOver() {
-       // Time.timeScale = 0.0f;
-        Debug.Log("GameOver");
+        Time.timeScale = 0f;
+        TextGameOver.text = "GameOver";
+        btn.SetActive(true);
     }
 }

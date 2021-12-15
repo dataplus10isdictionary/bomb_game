@@ -2,36 +2,38 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bomb : MonoBehaviour{
-    int SignBit;
-    bool Touching;
-    public float LIMIT_TIME = 5.0f;
+public class Bomb : MonoBehaviour {
+    protected int SignBit;
+    protected bool Touching;
+    protected float LIMIT_TIME;
     public float MOVE_SPEED = 0.05f;
     public float MOVE_UPPER_LIMMIT = 4.0f;
     public float MOVE_LOWER_LIMMIT = -4.0f;
     //デバッグで出力がうざいので。
     bool firstDebug = true;
-    
 
 
-    void Start()
+    protected void Start()
     {
         //初期値
         SignBit = 1;
         Touching = false;
-        Destroy(gameObject, LIMIT_TIME);
+        LIMIT_TIME = 5.0f;
+        //Destroy(gameObject, LIMIT_TIME);
     }
-    
 
-    void Update()
+
+    protected void Update()
     {
-        //生死の確認
-        if (!IsDead() && (Touching==false) ) {
+        LIMIT_TIME -= Time.deltaTime;
+        if (!Touching && !IsInCircle())
+        {
             Walk();
-        }else {
-            if(firstDebug) {
-                Debug.Log("bomb");
-                firstDebug = false;
+            if (IsDead())
+            {
+                Destroy(gameObject);
+                GameObject.Find("Game Directior").GetComponent<GameDirectior>().GameOver();
+                Debug.Log("死んだ");
             }
         }
     }
@@ -50,7 +52,6 @@ public class Bomb : MonoBehaviour{
     }
 
     bool IsDead() {
-        LIMIT_TIME -= Time.deltaTime;
         if (LIMIT_TIME <= 0.0f) {
             return true;
         }
@@ -58,9 +59,14 @@ public class Bomb : MonoBehaviour{
         return false;  
     }
 
-    bool IsInCircle(){
+    protected virtual bool IsInCircle(){
+        float bombX = transform.position.x;
+        if (bombX < -7f){
+            return true;
+        }
         return false;
     }
+
 
     public void OnMouseDrag()
     {

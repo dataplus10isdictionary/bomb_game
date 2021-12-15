@@ -22,6 +22,10 @@ public class GameDirectior : MonoBehaviour
        time += Time.deltaTime;
        this.timer.GetComponent<Text>().text = time.ToString("F2");
     //    time2.text = time.ToString("F2");
+    }
 
+    public void GameOver() {
+       // Time.timeScale = 0.0f;
+        Debug.Log("GameOver");
     }
 }

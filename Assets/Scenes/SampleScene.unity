@@ -154,7 +154,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bomb_pre: {fileID: 8793449621422059698, guid: b9ca47db73db209439800bd450f2fe01, type: 3}
   INTERVAL_TIME: 7
-  X: 0
 --- !u!4 &24021558
 Transform:
   m_ObjectHideFlags: 0
@@ -816,7 +815,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bomb_pre: {fileID: 3658980585056210275, guid: 56efb8546583b714b8700254bfbf5635, type: 3}
   INTERVAL_TIME: 6
-  X: 0
 --- !u!4 &1218295529
 Transform:
   m_ObjectHideFlags: 0

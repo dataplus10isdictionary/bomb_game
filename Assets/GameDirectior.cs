@@ -43,4 +43,9 @@ public class GameDirectior : MonoBehaviour
     {
         Score++;
     }
+
+    public float GetTime()
+    {
+        return time;
+    }
 }

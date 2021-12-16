@@ -198,10 +198,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 185a89131c7a53048b668b126ed983bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GameFlag: 1
+  GameFlag: 0
   TextGameOver: {fileID: 1935398646}
   TextScore: {fileID: 943298107}
   btn: {fileID: 1116093423}
+  QuitBtn: {fileID: 2013375648}
 --- !u!4 &140845987
 Transform:
   m_ObjectHideFlags: 0
@@ -517,10 +518,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 60
+    m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 6
+    m_MinSize: 3
     m_MaxSize: 60
     m_Alignment: 1
     m_AlignByGeometry: 0
@@ -553,7 +554,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -640, y: 547}
+  m_AnchoredPosition: {x: -303, y: 103}
   m_SizeDelta: {x: 326.5085, y: 157.8547}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &976915933

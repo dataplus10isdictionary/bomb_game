@@ -11,6 +11,7 @@ public class GameDirectior : MonoBehaviour
     public Text TextGameOver;
     public Text TextScore;
     public GameObject btn;
+    public GameObject QuitBtn;
     int Score;
 
     void Start()
@@ -18,6 +19,7 @@ public class GameDirectior : MonoBehaviour
         this.timer = GameObject.Find("Timer");
         GameFlag = true;
         btn.SetActive(false);
+        QuitBtn.SetActive(false);
         Score = 0;
         Time.timeScale = 1f;
     }
@@ -34,6 +36,7 @@ public class GameDirectior : MonoBehaviour
         Time.timeScale = 0f;
         TextGameOver.text = "GameOver";
         btn.SetActive(true);
+        QuitBtn.SetActive(true);
     }
 
     public void CountScore()
